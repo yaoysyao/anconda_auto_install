@@ -1,0 +1,2 @@
+# anconda_auto_install
+anconda_auto_install(anconda python虚拟环境一键安装脚本，同时支持安装第三方库)
