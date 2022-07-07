@@ -1,3 +1,3 @@
 #如果不指定版本将默认安装最新版本，此行不可删除，安装时会默认跳过第一行
-tensorflow==2.8.1
+tensorflow
 tensorflow-gpu==2.8.1
