@@ -1,4 +1,5 @@
 import os
+from install_config import *
 
 
 def pip_install():
@@ -26,12 +27,13 @@ def pip_install():
         for lib in libs:
             count = count + 1
             print('==========================开始安装第' + str(count) + '个库:', str(lib) + '====================')
-            os.system("pip install " + lib + " -i https://pypi.tuna.tsinghua.edu.cn/simple/")
+            if global_config['use_mirror'] is True:
+                os.system("pip install " + lib + " -i " + global_config['mirror_url'])
+            else:
+                os.system("pip install " + lib + " -i https://pypi.org/simple/")
             print("==========================安装成功:\t" + str(lib) + '===============================')
-        return True
     except Exception as err:
         print("安装失败\t" + str(lib) + str(err))
-    return False
 
 
 if __name__ == '__main__':
