@@ -6,11 +6,9 @@ def pip_install():
     print('=======================开始安装第三方库============================\n')
     # 将要批量安装的第三方库写进一个文件，然后读取文件进行安装
     libs = []
-    # 读取第三方库安装文件，进行安装，跳过第一行
     with open('pip_install.txt', mode='r', encoding='utf-8', newline='\n') as file:
-        for line in file.readlines()[1:]:
+        for line in file.readlines():
             libs.append(line.strip())
-    print('需要安装的第三方库为:', libs)
 
     if len(libs) <= 0:
         print('pip_install.txt 不存在第三方库配置，请使用pip install 自行安装,或者使用<conda remove -n your_env_name --all>删除虚拟环境重新安装')
@@ -21,6 +19,7 @@ def pip_install():
     if is_continue.lower() != 'y':
         return False
 
+    print('需要安装的第三方库为:', libs)
     lib = None
     try:
         count = 0
