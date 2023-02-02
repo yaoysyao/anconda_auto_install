@@ -30,10 +30,10 @@ linux_conda_activate = 'source activate '
 
 def create_conda_env(name, version):
     print('当前脚本版本:{0}'.format(install_config.version))
-    print('==========================开始安装anconda虚拟环境,虚拟幻境名称为:' + name + ',python版本为:' + version + '==========================\n')
+    print('==========================开始安装虚拟环境,虚拟环境名称为:' + name + ',python版本为:' + version + '==========================\n')
     try:
         os.system("conda create -n " + name + " python=" + version)
-        print("=====================安装anconda虚拟环境成功===========================\t")
+        print("=====================安装虚拟环境成功===========================\t")
         # 安装第三方库
         if global_config['install_extra_store'] is True:
             print('切换到新安装的虚拟环境中并执行脚本')
